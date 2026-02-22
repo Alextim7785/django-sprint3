@@ -29,7 +29,7 @@ def category_posts(request, slug):
 
 
 def post_detail(request, pk):
-    post = get_object_or_404(Post, id=pk)
+    post = get_object_or_404(get_published_posts(), id=pk)
     if (
         not post.is_published
         or post.pub_date > timezone.now()

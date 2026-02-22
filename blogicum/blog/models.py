@@ -26,7 +26,8 @@ class Post(PublishedModel):
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        verbose_name='Местоположение'
+        verbose_name='Местоположение',
+        related_name='posts'
     )
     category = models.ForeignKey(
         'Category',
